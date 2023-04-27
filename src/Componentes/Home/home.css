@@ -1,0 +1,14 @@
+.poster {
+    height: 450px;
+    width: 850px;
+    float: right;
+    margin-left: 240px;
+    padding: 5px 5px;
+}
+
+.title {
+    margin-left: 330px;
+    padding: 5px 5px;
+    color:#A6E3E9;
+    font-size: 70px;
+}

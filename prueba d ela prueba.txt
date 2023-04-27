@@ -1,0 +1,95 @@
+import {useEffect,useState} from "react";
+
+function Personajes() {
+  const [character, setCharacter] = useState(null);
+  useEffect (function getcharacters() {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((response) => response.json())
+      .then((data) => setCharacter(data.data));
+  }, []);
+
+  if (!character) {
+    return null
+  }
+
+  return (
+    <div>
+        <h1>Hola</h1>
+            {character.name} 
+    </div>
+  );
+    
+}
+
+export default Personajes
+
+------------------------------------------
+
+import { useState, useEffect } from 'react';
+
+function Personajes() {
+  const [datos, setDatos] = useState(null);
+
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character')
+      .then(response => response.json())
+      .then(data => {
+        setDatos(data.da);
+      });
+  }, []);
+
+  if (!datos) {
+    return <p>Cargando...</p>;
+  }
+
+  return (
+    <div>
+      <p>Los datos son:</p>
+      <ul>
+      
+        {datos.map(dato => (
+          <li key={dato.id}>{dato.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Personajes
+
+------------------------------------------------------
+
+import {getCharacters} from 'react';
+
+function Personajes (done) {
+    const url = 'https://rickandmortyapi.com/api/character';
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        done(data);
+      });
+}
+
+getCharacters(data => {
+        data.results.forEach(personaje => {
+
+            const article = document.createRange().createContextualFragment(`
+                <article>
+
+                    <div class="image-container">
+                        <img src="${personaje.image}" alt="Personaje">
+                    </div>
+                    <h2>${personaje.name}</h2>
+                    <span>${personaje.status}</span>
+
+                </article>
+            `);
+
+            // eslint-disable-next-line no-undef
+            const main = documnet.querySelector("main");
+            main.append(article);
+        });
+});
+
+export default  Personajes

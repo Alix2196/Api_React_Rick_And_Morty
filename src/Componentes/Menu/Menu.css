@@ -1,0 +1,15 @@
+.menu-wrapper {
+    border-bottom:1px solid var(--menu-text-hover-color)
+}
+.menu-wrapper{
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.menu {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    padding: 0;
+}

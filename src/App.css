@@ -1,0 +1,74 @@
+:root {
+  
+    /* HSL */
+    --hue: 205;
+    --saturation: 100%;
+    --lightness: 50%;
+    
+    /* Color palette */
+    --primary-color: hsl(var(--hue), var(--saturation), var(--lightness));
+    --secondary-color: hsl(calc(var(--hue) + 180), var(--saturation), var( --lightness));
+    
+    /* Scaffolding */
+    --body-bg: hsl(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 5));
+    
+    /* Card */
+    --card-border-color: hsla(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 1.8), 1);
+    --card-text-color: hsl(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 0.7));
+    --card-link-color: hsl(calc(var(--hue) + 180), var(--saturation), calc(var( --lightness) * 3));
+
+    --menu-border-color:#4895EF;
+    --background-color:#ffffff ;
+    --text-color:black;
+    --active:#d62828;
+    --menu-text-color:#2596F7;
+    --menu-text-hover-color:#4CC9F0;
+    --button-background-color:#ff80ba;
+    --button-background-color-hover:#8dafff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+
+      --menu-border-color:#ebb2ff;
+      --background-color:#051739;
+      --text-color:rgb(250, 249, 248);
+      --active:#f77f00;
+      --menu-text-color:#2596F7;
+      --menu-text-hover-color:#83d0ff;
+      --button-background-color:#83d0ff;
+      --buton-background-color-hover:#C865F9FF;
+      
+      /* HSL */
+      --hue: 120;
+      --lightness: 70%;
+      
+      /* Scaffolding */
+      --body-bg: hsl(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 0.25));
+      
+      /* Card */
+      --card-bg: hsl(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 0.325));
+      --card-border-color: hsla(var(--hue), calc(var(--saturation) * 0), calc(var(--lightness) * 1.8), 0.05);
+      --card-text-color: hsl(var(--hue), calc(var(--saturation) * 0), var(--lightness));
+      --card-link-color: hsl(calc(var(--hue) + 180), var(--saturation), calc(var( --lightness) * 1.1));
+    }
+  }
+
+body,html, #root {
+  min-height:100vh;
+}
+
+.App {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--tex-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  flex: 1;
+  padding:14px ;
+}
